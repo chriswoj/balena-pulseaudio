@@ -23,15 +23,11 @@ if [ "$alsa_source3" != "" ]; then
 fi
 
 # run bluetooth connect loop
-/connect_bluetooth.sh &
+# /connect_bluetooth.sh &
 
 # see issue https://github.com/janvda/balena-pulseaudio/issues/13
 unset DISPLAY
 
-if [ "log_level" = "" ]; then
-  log_level=2  # default log level
-fi
-
 echo starting pulseaudio ...
-pulseaudio --log-level=$log_level
+pulseaudio --log-level=2
 echo ERROR: pulseaudio stopped
